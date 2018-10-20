@@ -11,10 +11,15 @@ namespace DEV_2
     {
         static void Main(string[] args)
         {
-            string str = "щетка";
+            string str = "privet";
             Transliter translit = new Transliter();
-            str = translit.TranslitRusToLatin(str);
+            str = translit.Translate(str);
             Console.WriteLine(str);
+
+            string str1 = "привет";
+            Transliter translit1 = new Transliter();
+            str1 = translit1.Translate(str1);
+            Console.WriteLine(str1);
             Console.ReadKey();
         }
     }
