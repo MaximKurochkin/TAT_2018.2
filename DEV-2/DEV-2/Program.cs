@@ -13,7 +13,6 @@ namespace DEV_2
             //for translate rus symbols to latin i use the table that you recomend
             try
             {
-                args[0] = "привет";
                 Transliter translit = new Transliter();
                 string str = translit.Translate(args[0]);
                 Console.WriteLine(str);
