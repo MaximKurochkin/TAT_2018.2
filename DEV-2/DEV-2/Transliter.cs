@@ -58,8 +58,8 @@ namespace DEV_2
                 if ( (ch > 191 && ch < 224) || (ch > 64 && ch < 91)) throw new Exception("Upper case not supported!");
                 else
                 {
-                    if (ch >= 'а' && (languge == 1 || languge == 0)) languge = 1;
-                    else if (languge == 2 || languge == 0) languge = 2;
+                    if (ch >= 'а' && languge!= 2) languge = 1;
+                    else if (languge != 1) languge = 2;
                     else throw new Exception("Please, use symbols of one language!");
                 }
             }
