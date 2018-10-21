@@ -53,8 +53,15 @@ namespace DEV_2
         public int CheckLanguage(string str)
         {
             // 0 - rus to latin, 1- latin to rus
-            if (str[0] >= 'а') languge = 0;
-            else languge = 1;
+            foreach (var ch in str)
+            {
+                if ( (ch > 191 && ch < 224) || (ch > 64 && ch < 91)) throw new Exception("Upper case not supported");
+                else
+                {
+                    if (ch >= 'а') languge = 0;
+                    else languge = 1;
+                }
+            }
             return languge;
         }
 
@@ -73,15 +80,19 @@ namespace DEV_2
             var result = "";
             foreach (var ch in str) 
             {
-                var ss = "";
-                //if in dictionary there is key with such value we get true
-                //and add value from dictionary
-                if (translitTableRusToLatin.TryGetValue(ch.ToString(), out ss))
-                {
-                    result += ss;
-                }
-                // or add the same symbol
-                else result += ch;
+               //if (ch > 191 && ch < 224) throw new Exception("Upper case not supported");
+                //else
+                //{
+                    var ss = "";
+                    //if in dictionary there is key with such value we get true
+                    //and add value from dictionary
+                    if (translitTableRusToLatin.TryGetValue(ch.ToString(), out ss))
+                    {
+                        result += ss;
+                    }
+                    // or add the same symbol
+                    else result += ch;
+               // }
             }
             return result;
         }
@@ -106,7 +117,7 @@ namespace DEV_2
                         case 's':
                             sb.Append('щ');
                             i++; 
-                            if (s[i] != 'н') throw new Exception("Illegal transliterated symbol at position " + i);// вариант третьего символа только один
+                            if (s[i] != 'н') throw new Exception("Illegal transliterated symbol at position " + i);
                             break;
                         //jh - ь
                         //ju - ю

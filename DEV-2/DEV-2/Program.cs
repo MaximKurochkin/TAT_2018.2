@@ -11,12 +11,20 @@ namespace DEV_2
             //ж - zhh, и - i, х - khh, ц - c, ч - chh, ш - shh, щ - js, ъ - hhh, ы - ihh, ь - jh, э - ehh, ю - ju, я -ja
 
             //for translate rus symbols to latin i use the table that you recomend
-            string str = args[0];
-            Transliter translit = new Transliter();
-            str = translit.Translate(str);
-            Console.WriteLine(str);
+            try
+            {
+                args[0] = "Привет";
+                string str ;
+                Transliter translit = new Transliter();
+                str = translit.Translate(args[0]);
+                
+                Console.WriteLine(str);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             Console.ReadKey();
-
         }
     }
 }
