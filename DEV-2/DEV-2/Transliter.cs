@@ -7,7 +7,7 @@ namespace DEV_2
     //class Transliter translate latin symbols to rus and rus symbols to latin
     public class Transliter
     {
-        private int languge = 0; // 0 - rus to latin, 1- latin to rus
+        private int languge = 0; // 1 - rus to latin, 2- latin to rus
 
         //create dictionary for translate rus symbols to latin
         //use this srtucture becouse russian sounds single characters
@@ -52,14 +52,15 @@ namespace DEV_2
         //parameter str - is our string which we need to translate
         public int CheckLanguage(string str)
         {
-            // 0 - rus to latin, 1- latin to rus
+            // 1 - rus to latin, 2- latin to rus
             foreach (var ch in str)
             {
-                if ( (ch > 191 && ch < 224) || (ch > 64 && ch < 91)) throw new Exception("Upper case not supported");
+                if ( (ch > 191 && ch < 224) || (ch > 64 && ch < 91)) throw new Exception("Upper case not supported!");
                 else
                 {
-                    if (ch >= 'а') languge = 0;
-                    else languge = 1;
+                    if (ch >= 'а' && (languge == 1 || languge == 0)) languge = 1;
+                    else if (languge == 2 || languge == 0) languge = 2;
+                    else throw new Exception("Please, use symbols of one language!");
                 }
             }
             return languge;
@@ -70,7 +71,7 @@ namespace DEV_2
         //parameter str - is our string which we need to translate
         public string Translate(string str)
         {
-            if (CheckLanguage(str) == 0) return TranslitRusToLatin(str);
+            if (CheckLanguage(str) == 1) return TranslitRusToLatin(str);
             else return TranslitLatinToRus(str);
         }
 
@@ -80,19 +81,15 @@ namespace DEV_2
             var result = "";
             foreach (var ch in str) 
             {
-               //if (ch > 191 && ch < 224) throw new Exception("Upper case not supported");
-                //else
-                //{
-                    var ss = "";
-                    //if in dictionary there is key with such value we get true
-                    //and add value from dictionary
-                    if (translitTableRusToLatin.TryGetValue(ch.ToString(), out ss))
-                    {
-                        result += ss;
-                    }
-                    // or add the same symbol
-                    else result += ch;
-               // }
+                var ss = "";
+                //if in dictionary there is key with such value we get true
+                //and add value from dictionary
+                if (translitTableRusToLatin.TryGetValue(ch.ToString(), out ss))
+                {
+                    result += ss;
+                }
+                // or add the same symbol
+                else result += ch;
             }
             return result;
         }
