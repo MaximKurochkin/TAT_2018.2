@@ -15,9 +15,6 @@ namespace DEV_3
         {
             try
             {
-                args[0] = "1999";
-                args[1] = "9";
-
                 Console.WriteLine(" Your numeric in number system with base 10: " + args[0]);
 
                 NumericTranslator translator = new NumericTranslator();
