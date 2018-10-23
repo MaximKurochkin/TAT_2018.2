@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DEV_3
 {
+    // <summary>
+    // StringReverse
+    // reverses a string 
+    // </summery>
     class StringReverser
     {
         public string Reverse (string input)
