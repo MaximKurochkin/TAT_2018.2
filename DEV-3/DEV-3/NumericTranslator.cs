@@ -12,18 +12,20 @@ namespace DEV_3
 
         public string TranslateInto (string _number, string _basis)
         {
+            if (_number == "0") throw new Exception("Please, enter a number.");
+
             int number = Convert.ToInt32(_number);
             int basis = Convert.ToInt32(_basis);
 
-            if (_number == "0") throw new Exception("Please, enter a number.");
             if (basis > 20 || basis < 2) throw new Exception("Please, check the data! The basis can be from 2 to 20.");
             else
             {
+                if (number < 0) number = number * (-1);
                 int numForDevision = number;
+                if (number < basis) AddSymbol(number);
                 while (numForDevision >= basis)
                 {
                     int resultOfDevision = numForDevision / basis;
-                    //if (resultOfDevision < basis) AddSymbol(resultOfDevision);
 
                     int residue = numForDevision - basis * resultOfDevision;
                     numAfterTranslate = AddSymbol(residue);
@@ -34,7 +36,9 @@ namespace DEV_3
                 }
             }
             StringReverser reverser = new StringReverser();
-            return reverser.Reverse(numAfterTranslate);
+            string result = reverser.Reverse(numAfterTranslate);
+            if (_number[0] == '-') result = result.Insert(0, "-");
+            return result;
         }
 
         public string AddSymbol (int resultOfDevision)
