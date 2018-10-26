@@ -125,26 +125,34 @@ namespace DEV_3
         {
             string symbol = String.Empty;
 
+            // if symbolOfNumber < 10 then
+            // converts symbolOfNumber into int
+            // because we insert it as a symbol
+            // of numeric in new number system
+            // else
+            // use ASCI-code of symbols A, B, C...I, J
+            // to get them like a char then converts it into string
+            // and inserts like a symbol of numeric in new number system
             if (symbolOfNumber < 10)
             {
                 symbol = symbolOfNumber.ToString();
             } 
             else
             {
-                switch (symbolOfNumber)
-                {
-                    case 10: symbol = "A"; break;
-                    case 11: symbol = "B"; break;
-                    case 12: symbol = "C"; break;
-                    case 13: symbol = "D"; break;
-                    case 14: symbol = "E"; break;
-                    case 15: symbol = "F"; break;
-                    case 16: symbol = "G"; break;
-                    case 17: symbol = "H"; break;
-                    case 18: symbol = "I"; break;
-                    case 19: symbol = "J"; break;
-                    default: break;
-                }
+                // Symbol   ASCI-code  SymbolOfNumber
+                // A        65         10
+                // B        66         11
+                // C        67         12
+                //    .....     ......
+                // J        74         19
+                //
+                // char A = ASCI-code of A - 10 + 10 = 65 (ASCI-code)
+                // char B = ASCI-code of B - 10 + 11 = 66
+                // char C = ASCI-code of C - 10 + 12 = 67
+                // ........
+                // char J = ASCI-code of J - 10 + 19 = 74
+                char CharSymbolOfNumber = (char)('A' - 10 + symbolOfNumber);
+                symbol = CharSymbolOfNumber.ToString();
             }
             numAfterConvert = numAfterConvert.Insert(numAfterConvert.Length, symbol);
             return numAfterConvert;
