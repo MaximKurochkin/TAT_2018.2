@@ -24,7 +24,6 @@ namespace DEV_3
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.ReadKey();
         }
     }
 }
