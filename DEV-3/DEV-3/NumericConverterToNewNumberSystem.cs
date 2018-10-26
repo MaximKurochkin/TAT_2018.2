@@ -126,7 +126,7 @@ namespace DEV_3
             string symbol = String.Empty;
 
             // if symbolOfNumber < 10 then
-            // converts symbolOfNumber into int
+            // converts symbolOfNumber into string
             // because we insert it as a symbol
             // of numeric in new number system
             // else
