@@ -131,6 +131,7 @@ namespace DEV_3
             // of numeric in new number system
             // else
             // use ASCI-code of symbols A, B, C...I, J
+            // ('J' is last because the max value of radix is 20)
             // to get them like a char then converts it into string
             // and inserts like a symbol of numeric in new number system
             if (symbolOfNumber < 10)
@@ -147,10 +148,10 @@ namespace DEV_3
                 // J        74         19
                 //
                 // char A = ASCI-code of A - 10 + 10 = 65 (ASCI-code)
-                // char B = ASCI-code of B - 10 + 11 = 66
-                // char C = ASCI-code of C - 10 + 12 = 67
+                // char B = ASCI-code of A - 10 + 11 = 66
+                // char C = ASCI-code of A - 10 + 12 = 67
                 // ........
-                // char J = ASCI-code of J - 10 + 19 = 74
+                // char J = ASCI-code of A - 10 + 19 = 74
                 char CharSymbolOfNumber = (char)('A' - 10 + symbolOfNumber);
                 symbol = CharSymbolOfNumber.ToString();
             }
