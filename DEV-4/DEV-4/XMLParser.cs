@@ -71,7 +71,7 @@ namespace DEV_4
                     continue;
                 }
 
-                // if string contains close tag
+                // if string contains closing tag
                 // then remove from elementsAndAttributes name of this tag
                 if (currentString.StartsWith("</"))
                 {

@@ -12,6 +12,7 @@ namespace DEV_4
     /// into array of strings
     /// FileAddress - address of XML-file
     /// </summary>
+    
     class ConvertXMLIntoStrings
     {
         public string[] XMLInString { get; set; }

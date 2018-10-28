@@ -11,6 +11,7 @@ namespace DEV_4
     /// takes the address of XML-file
     /// and parse it into list
     /// </summary>
+    
     class GettingDataFromXML
     {
         static void Main(string[] args)
