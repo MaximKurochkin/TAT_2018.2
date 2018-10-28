@@ -12,6 +12,7 @@ namespace DEV_4
     
     class GettingDataFromXML
     {
+        //entery point
         static void Main(string[] args)
         {
             try
