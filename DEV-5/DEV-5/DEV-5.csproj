@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AddToStock.cs" />
     <Compile Include="AveragePrice.cs" />
+    <Compile Include="AveragePriceOfBrand.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="ContentsOfStock.cs" />
     <Compile Include="ConvertFileIntoStrings.cs" />

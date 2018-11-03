@@ -6,7 +6,7 @@ namespace DEV_5
     {
         public void Execute(Stock stock)
         {
-            Console.WriteLine("Average price of cars: " + stock.AveragePrice());
+            Console.WriteLine("Average price of cars: " + stock.AveragePrice() + " $");
         }
     }
 }

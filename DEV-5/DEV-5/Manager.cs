@@ -26,6 +26,11 @@ namespace DEV_5
             comand.Execute(stock);
         }
 
+        public void AveragePriceOfBrand(Stock stock)
+        {
+            comand.Execute(stock);
+        }
+
         public void AddToStock(Stock stock)
         {
             comand.Execute(stock);

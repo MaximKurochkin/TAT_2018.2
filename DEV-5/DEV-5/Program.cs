@@ -51,6 +51,8 @@ namespace DEV_5
                             break;
 
                         case "average price:":
+                            manager.SetCommand(new AveragePriceOfBrand());
+                            manager.AveragePriceOfBrand(stock);
                             break;
 
                         case "exit":

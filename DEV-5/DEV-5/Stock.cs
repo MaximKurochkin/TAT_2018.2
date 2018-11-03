@@ -113,9 +113,22 @@ namespace DEV_5
             return averagePriceOfCars;
         }
 
-        public void AveragePrice(string type)
+        public double AveragePriceOfBrand(string brand)
         {
+            double averagePriceOfBrand = 0.0;
+            int totalCostOfBrand = 0;
+            int numberOfCarsOfThisBrand = 0;
 
+            foreach (Car car in recordsAboutObject)
+            {
+                if(car.brand == brand)
+                {
+                    numberOfCarsOfThisBrand += car.count;
+                    totalCostOfBrand += car.cost * car.count;
+                }
+            }
+            averagePriceOfBrand = totalCostOfBrand / numberOfCarsOfThisBrand;
+            return averagePriceOfBrand;
         }
 
         public void AddToStock()
