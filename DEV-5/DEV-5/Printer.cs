@@ -27,5 +27,14 @@ namespace DEV_5
         {
             Console.WriteLine("Brand: " + car.brand + "    model: " + car.model + "   count: " + car.count + "    cost: " + car.cost + " $");
         }
+
+        public void PrintList(List<Car> records)
+        {
+            Printer printer = new Printer();
+            foreach (Car car in records)
+            {
+                printer.PrintInfAboutCar(car);
+            }
+        }
     }
 }

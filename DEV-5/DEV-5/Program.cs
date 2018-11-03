@@ -25,16 +25,6 @@ namespace DEV_5
 
                     switch (userInput)
                     {
-                        case "print":
-                            manager.SetCommand(new ContentsOfStock());
-                            manager.ContentsOfStock(stock);
-                            break;
-
-                        case "add":
-                            manager.SetCommand(new AddToStock());
-                            manager.AddToStock (stock);
-                            break;
-
                         case "count types":
                             manager.SetCommand(new CountTypes());
                             manager.CountTypes(stock);
@@ -50,9 +40,23 @@ namespace DEV_5
                             manager.AveragePrice(stock);
                             break;
 
-                        case "average price:":
+                        case "average price of brand":
                             manager.SetCommand(new AveragePriceOfBrand());
                             manager.AveragePriceOfBrand(stock);
+                            break;
+
+                        case "print":
+                            manager.SetCommand(new ContentsOfStock());
+                            manager.ContentsOfStock(stock);
+                            break;
+
+                        case "add":
+                            manager.SetCommand(new AddToStock());
+                            manager.AddToStock(stock);
+                            break;
+
+                        case "?":
+                            printer.PrintMenu();
                             break;
 
                         case "exit":
@@ -60,6 +64,8 @@ namespace DEV_5
                             break;
 
                         default:
+                            Console.WriteLine("Command doesn't exist or entered incorrectly");
+                            Console.WriteLine("Please, try again");
                             break;
                     }
                 }
