@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DEV_5
 {
@@ -102,9 +100,17 @@ namespace DEV_5
             return countOfCars;
         }
 
-        public void AveragePrice()
+        public double AveragePrice()
         {
+            double averagePriceOfCars = 0.0;
+            int totalCostOfCars = 0;
 
+            foreach (Car car in recordsAboutObject)
+            {
+                totalCostOfCars += car.cost;
+            }
+            averagePriceOfCars = totalCostOfCars / CountAll();
+            return averagePriceOfCars;
         }
 
         public void AveragePrice(string type)

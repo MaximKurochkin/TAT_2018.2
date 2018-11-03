@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DEV_5
 {
@@ -49,6 +46,8 @@ namespace DEV_5
                             break;
 
                         case "average price":
+                            manager.SetCommand(new AveragePrice());
+                            manager.AveragePrice(stock);
                             break;
 
                         case "average price:":
