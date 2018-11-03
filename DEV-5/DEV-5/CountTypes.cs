@@ -11,7 +11,7 @@ namespace DEV_5
 
         public void Execute(Stock stock)
         {
-            stock.CountTypes();
+            Console.WriteLine("The count of brands: " + stock.CountTypes());
         }
     }
 }

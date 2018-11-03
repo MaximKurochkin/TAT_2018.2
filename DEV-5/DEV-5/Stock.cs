@@ -12,7 +12,7 @@ namespace DEV_5
 
         public Stock()
         {
-            ConvertFileIntoStrings converter = new ConvertFileIntoStrings("D:\\MyPrograms\\Courses\\HomeTasks\\DEV-5\\Cars.txt");
+            ConvertFileIntoStrings converter = new ConvertFileIntoStrings("D:\\MyPrograms\\Courses\\HomeTasks\\DEV-1\\DEV-5\\Cars.txt");
             string[] FileInStrings = converter.FileInStrings;
 
             int index = 0;
@@ -75,9 +75,21 @@ namespace DEV_5
             }
         }
 
-        public void CountTypes()
+        public int CountTypes()
         {
-
+            List<string> listOfBrands = new List<string>();
+            foreach(Car car in recordsAboutObject)
+            {
+                if (listOfBrands.Contains(car.brand))
+                {
+                    continue;
+                }
+                else
+                {
+                    listOfBrands.Add(car.brand);
+                }
+            }
+            return listOfBrands.Count;
         }
 
         public void CountAll()
