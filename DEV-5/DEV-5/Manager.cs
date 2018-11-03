@@ -20,6 +20,11 @@ namespace DEV_5
             comand.Execute(stock);
         }
 
+        public void CountAll(Stock stock)
+        {
+            comand.Execute(stock);
+        }
+
         public void AddToStock(Stock stock)
         {
             comand.Execute(stock);

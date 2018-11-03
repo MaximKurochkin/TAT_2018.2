@@ -44,6 +44,8 @@ namespace DEV_5
                             break;
 
                         case "count all":
+                            manager.SetCommand(new CountAll());
+                            manager.CountAll(stock);
                             break;
 
                         case "average price":

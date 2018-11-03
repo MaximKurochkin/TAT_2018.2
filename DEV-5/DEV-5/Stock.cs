@@ -92,9 +92,14 @@ namespace DEV_5
             return listOfBrands.Count;
         }
 
-        public void CountAll()
+        public int CountAll()
         {
-
+            int countOfCars = 0;
+            foreach (Car car in recordsAboutObject)
+            {
+                countOfCars += car.count;
+            }
+            return countOfCars;
         }
 
         public void AveragePrice()
