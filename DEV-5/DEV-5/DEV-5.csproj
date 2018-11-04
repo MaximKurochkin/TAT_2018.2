@@ -54,7 +54,7 @@
     <Compile Include="IComand.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Printer.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="StockOfCars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock.cs" />
   </ItemGroup>

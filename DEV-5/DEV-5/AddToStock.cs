@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace DEV_5
 {
-    class AddToStock : IComand
+    /// <summary>
+    /// Class AddToStock
+    /// contains interface ICommand
+    /// </summary>
+
+    class AddToStock : ICommand
     {
+        /// <summary>
+        /// Method Execute
+        /// calls method AddToStock to perform command "add"
+        /// </summary>
+        /// <param name="stock">storage in which we keep cars</param>
 
         public void Execute(Stock stock)
         {
