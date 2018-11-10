@@ -49,7 +49,9 @@ namespace DEV_6
             //object for work with strings (add symbols, delete...)
             WorkWithString builder = new WorkWithString();
 
+            //start of JSON-file
             dataOfXMLFile.Add("{");
+
             //start to parse XML-file
             for (int i = 1; i < fileInStrings.Length; i++)
             {
@@ -66,15 +68,20 @@ namespace DEV_6
                     continue;
                 }
 
+                // if string contains "</"
+                // then it is a closing tag
+                // and prints "}" into JSON-file
                 if (currentString.StartsWith("</"))
                 {
                     elementOfXML.Append("}");
                     dataOfXMLFile.Add(elementOfXML.ToString());
                     elementOfXML.Clear();
-                    
                     continue;
                 }
 
+                // if string contains "<" and "</"
+                // then prints into JSON-file next
+                // "elementOfXML": "value",
                 if (currentString.StartsWith("<") && currentString.Contains("</"))
                 {
                     elementOfXML.Append("   ");
@@ -85,11 +92,10 @@ namespace DEV_6
                         indOfStr++;
                     }
                     elementOfXML.Append('"');
-                    elementOfXML.Append(':');
+                    elementOfXML.Append(": ");
+                    elementOfXML.Append('"');
 
                     indOfStr++;
-
-                    elementOfXML.Append('"');
 
                     while (currentString[indOfStr] != '<')
                     {
@@ -105,6 +111,8 @@ namespace DEV_6
                     continue;
                 }
 
+                // if string contains only "<elementOfXML>"
+                // then bypass the whole block to the end
                 if (currentString.StartsWith("<"))
                 {
                     elementOfXML.Append("   ");
@@ -115,7 +123,7 @@ namespace DEV_6
                         indOfStr++;
                     }
                     elementOfXML.Append('"');
-                    elementOfXML.Append(":{");
+                    elementOfXML.Append(": {");
                     dataOfXMLFile.Add(elementOfXML.ToString());
                     indOfStr = 1;
                     elementOfXML.Clear();
@@ -126,8 +134,12 @@ namespace DEV_6
 
                     currentString = builder.RemoveSpacesAtBeginning(str);
 
+                    // while did not reach the end of block
                     while (!currentString.StartsWith("</"))
-                    {
+                    {   
+                        // if string contains "<" and "</"
+                        // then prints into JSON-file next
+                        // "elementOfXML": "value",
                         if (currentString.StartsWith("<") && currentString.Contains("</"))
                         {
                             elementOfXML.Append("       ");
@@ -138,7 +150,7 @@ namespace DEV_6
                                 indOfStr++;
                             }
                             elementOfXML.Append('"');
-                            elementOfXML.Append(':');
+                            elementOfXML.Append(": ");
 
                             indOfStr++;
 
@@ -161,12 +173,15 @@ namespace DEV_6
                         currentString = builder.RemoveSpacesAtBeginning(str);
                     }
                     
+                    // if have reached to the end of block
+                    // then print into JSON-file "},"
                     if (currentString.StartsWith("</"))
                     {
                         elementOfXML.Append("   ");
                         elementOfXML.Append("},");
                         dataOfXMLFile.Add(elementOfXML.ToString());
                         elementOfXML.Clear();
+                        indOfStr = 1;
                     }
                     continue;
                 }
