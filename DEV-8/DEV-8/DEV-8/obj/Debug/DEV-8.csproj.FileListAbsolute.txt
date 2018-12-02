@@ -1,7 +1,0 @@
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\bin\Debug\DEV-8.exe.config
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\bin\Debug\DEV-8.exe
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\bin\Debug\DEV-8.pdb
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\obj\Debug\DEV-8.csprojAssemblyReference.cache
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\obj\Debug\DEV-8.csproj.CoreCompileInputs.cache
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\obj\Debug\DEV-8.exe
-D:\MyPrograms\Courses\HomeTasks\DEV-8\DEV-8\DEV-8\obj\Debug\DEV-8.pdb
