@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Trucks>
+  <Truck>
+    <Brand>Volvo</Brand>
+    <Model>FH Globetrotter XL</Model>
+    <Count>2</Count>
+    <Cost>258116</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Scania</Brand>
+    <Model>S High Roof</Model>
+    <Count>1</Count>
+    <Cost>273790</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Man</Brand>
+    <Model>TGX XXl</Model>
+    <Count>3</Count>
+    <Cost>196475</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Renault</Brand>
+    <Model>Magnum Excellence</Model>
+    <Count>2</Count>
+    <Cost>182955</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Mercedes-Benz</Brand>
+    <Model>New Actros GigaSpace</Model>
+    <Count>1</Count>
+    <Cost>259600</Cost>
+  </Truck>
+  <Truck>
+    <Brand>DAF</Brand>
+    <Model>XF SuperSpace</Model>
+    <Count>1</Count>
+    <Cost>236390</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Scania</Brand>
+    <Model>R High Roof</Model>
+    <Count>3</Count>
+    <Cost>269290</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Scania</Brand>
+    <Model>R 2012 Topline</Model>
+    <Count>2</Count>
+    <Cost>251040</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Mercedes-Benz</Brand>
+    <Model>New Actros BigSpace</Model>
+    <Count>1</Count>
+    <Cost>191570</Cost>
+  </Truck>
+  <Truck>
+    <Brand>Volvo</Brand>
+    <Model>FH16 Classic Globetrotter XL</Model>
+    <Count>1</Count>
+    <Cost>195265</Cost>
+  </Truck>
+</Trucks>
